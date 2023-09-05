@@ -3,12 +3,14 @@ import {useState, useEffect} from 'react'
 function HomePage() {
     const [data,setData]=useState([])
     useEffect(()=>{
-        fetch(`${process.env.API_URL}/country`)
-        .then((res)=>{
-            setData(res)
-        })
+        const fetchCountryData=async()=>{
+            const response=await fetch(`${process.env.API_URL}/country`);
+            console.log(response);
+            setData(response);
+        }
+        fetchCountryData();
     },[])
-
+    console.log("data",data);
     const cards=data?.map((item)=>{
         return(
             <Card
