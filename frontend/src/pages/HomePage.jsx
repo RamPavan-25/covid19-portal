@@ -1,6 +1,6 @@
 import Card from '../components/Card'
 import {useState, useEffect} from 'react'
-function HomePage() {
+async function HomePage() {
     const [data,setData]=useState([])
     useEffect(()=>{
         fetch(`${process.env.API_URL}/country`)
