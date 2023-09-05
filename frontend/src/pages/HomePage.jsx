@@ -4,8 +4,9 @@ function HomePage() {
     const [data,setData]=useState([])
     useEffect(()=>{
         fetch(`${process.env.API_URL}/country`)
-        .then(res=>res.json())
-        .then(data=>setData(data))
+        .then((res)=>{
+            setData(res)
+        })
     },[])
 
     const cards=data.map((item)=>{
