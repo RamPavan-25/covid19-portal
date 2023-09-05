@@ -9,7 +9,7 @@ function HomePage() {
         })
     },[])
 
-    const cards=data.map((item)=>{
+    const cards=data?.map((item)=>{
         return(
             <Card
                 key={item._id}
